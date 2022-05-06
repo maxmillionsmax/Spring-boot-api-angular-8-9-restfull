@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Curso-Angular-REST';
+
+  usuario = {login: '', senha: ''};
+
+  // tslint:disable-next-line: typedef
+  public login(){
+    console.log('Teste Login: ' + this.usuario.login + ' Senha:   ' + this.usuario.senha);
+  }
 }
