@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginServiceService } from './service/login-service.service';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,9 @@ export class AppComponent {
 
   usuario = {login: '', senha: ''};
 
-  // tslint:disable-next-line: typedef
+   constructor(private loginService: LoginServiceService){}
+
   public login(){
-    console.log('Teste Login: ' + this.usuario.login + ' Senha:   ' + this.usuario.senha);
+	this.loginService.login(this.usuario);
   }
 }
